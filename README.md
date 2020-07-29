@@ -12,5 +12,4 @@
 4. 发布流程
    - 4.1 nrm use npm 切换npm源 (不是淘宝镜像可以跳过)
    - 4.2 npm adduser (第一次发包 npm login 先登录)
-   - 4.3 npm publish
-   - 4.4 npm unpublish --force 删除线上的包
+   - 4.3 npm publish (发布、更新包)
