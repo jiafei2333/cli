@@ -1,24 +1,15 @@
-import request from 'request';
+import fetch from 'fetch';
 import { getAll } from './rc'
 import downLoadGit from 'download-git-repo';
 import {DOWNLOAD} from './constants'
 
-let fetch = async (url) => {
+let fetchFun =  async (url) => {
+    console.log("fetch::::",url)
     return new Promise((resolve, reject) => {
-        let config = {
-            url,
-            method: 'get',
-            headers: {
-                'user-agent': 'xxx'
-            }
-        }
-        console.log("fetch:config:",config);
-        request(config, (err, response, body) => {
-            if (err) {
-                reject(err);
-            }
-            console.log("fetch:request:",body);
-            resolve(JSON.parse(body))
+        
+        fetch.fetchUrl(url,function(error, meta,body){
+            console.log("data:--",body);
+            resolve(JSON.parse(body));
         })
     })
 }
@@ -28,7 +19,7 @@ let fetch = async (url) => {
 export let tagList = async (repo) => {
     let config = await getAll();
     let api = `https://api.github.com/repos/${config.registry}/${repo}/tags`;
-    return await fetch(api)
+    return await fetchFun(api)
 }
 
 //链接地址：https://api.github.com/orgs/jiafei2333/repos 项目
@@ -38,7 +29,7 @@ export let repoList = async () => {
     console.log("repoList-config:",config);
     let api = `https://api.github.com/${config.type}/${config.registry}/repos`;
     console.log("repoList:api",api)
-    return await fetch(api);
+    return await fetchFun(api);
 }
 
 
