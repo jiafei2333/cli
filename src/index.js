@@ -7,7 +7,7 @@ import { betterRequire } from './utils/common';//动态加载文件
 import { resolve } from 'path'
 
 let apply = (action, ...args) => {
-    console.log("index:",action, args)
+    //console.log("index:",action, args)
 
     //babel-env  export default=>module.exports={default:xxx}
     betterRequire(resolve(__dirname, `./${action}`))(...args) //默认导出

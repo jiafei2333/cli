@@ -46,15 +46,15 @@ export let remove = async (k) => {
     }
 }
 export let getAll = async () => {
-    console.log("getAll:",RC);
+    console.log("RC file: ",RC);
     let has=await exists(RC);
-    console.log("has:",has);
+    //console.log("exists RC file: ",has);
     let opts;
     if(has){
         opts=await readFile(RC,'utf8');
-        console.log("opts:",opts);
+        //console.log("opts:",opts);
         opts=decode(opts);
-        console.log("decode-opts:",opts);
+        // console.log("decode-opts:",opts);
         return opts;
     }
     return {}

@@ -4,11 +4,12 @@ import downLoadGit from 'download-git-repo';
 import {DOWNLOAD} from './constants'
 
 let fetchFun =  async (url) => {
-    console.log("fetch::::",url)
+    //console.log("fetch::::",url)
     return new Promise((resolve, reject) => {
         
         fetch.fetchUrl(url,function(error, meta,body){
-            console.log("data:--",body);
+            //console.log("data:--",body);
+            console.log("fetch error:",error);
             resolve(JSON.parse(body));
         })
     })
@@ -22,13 +23,13 @@ export let tagList = async (repo) => {
     return await fetchFun(api)
 }
 
-//链接地址：https://api.github.com/orgs/jiafei2333/repos 项目
+//链接地址：https://api.github.com/users/jiafei2333/repos 项目
 export let repoList = async () => {
-    console.log("repoList:-------",)
+    //console.log("repoList:-------",)
     let config = await getAll();
-    console.log("repoList-config:",config);
+    //console.log("repoList-config:",config);
     let api = `https://api.github.com/${config.type}/${config.registry}/repos`;
-    console.log("repoList:api",api)
+    //console.log("repoList:api",api)
     return await fetchFun(api);
 }
 

@@ -10,14 +10,14 @@ let install = async () => {
     loading.start()
     let list = await repoList();
     loading.succeed();
-    console.log("list:-----", list);
     list = list.map(({name}) => name);
-    console.log("list",list);
+    console.log("模板列表list：",list);
     let answer = await inquirer.prompt([{
         type: 'list',
         name: 'project',
-        choices: list,
-        questions: 'pleace choice template'
+        message: 'place choice template:',
+        choices: list
+        
     }]);
     // console.log("answer:",answer.project);
     //拿到当前项目
