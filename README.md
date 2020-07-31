@@ -11,7 +11,7 @@
 
 3. 安装配置文件：`jiafei2333-cli config set a 1`
 
-3. 下载模板：`jiafei2333-cli i | install`
+3. 下载模板：`jiafei2333-cli i | install` 这里模板选择 `react-template`，也可以配置自己的模板
 
 
 ### 脚手架使用步骤
