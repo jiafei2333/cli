@@ -20,7 +20,7 @@
 
 2. `jiafei2333-cli` 查看命令行信息
     
-3. 更改模板配置步骤：
+3. 更改模板配置步骤（二选一）：
     - 3.1 修改 utils/constants 中 DEFAULTS 的配置
     - 3.2 执行 `jiafei2333-cli config set registry xxxx`  |  `jiafei2333-cli config set type xxxx`  即可
     
